@@ -1,20 +1,37 @@
-﻿// ConsoleApplication1.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
-//
-
 #include <iostream>
+using namespace std;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main() {
+    int n;
+
+    // 輸入正整數 n
+    cout << "請輸入一個正整數 n: ";
+    cin >> n;
+
+    // 1. 使用 for 迴圈計算偶數和
+    int sum_for = 0;
+    for (int i = 2; i <= n; i += 2) {  // 從 2 開始，每次加 2
+        sum_for += i;
+    }
+    cout << "使用 for 迴圈計算的偶數和: " << sum_for << endl;
+
+    // 2. 使用 while 迴圈計算偶數和
+    int sum_while = 0;
+    int i_while = 2;
+    while (i_while <= n) {  // 當 i_while 小於等於 n 時
+        sum_while += i_while;
+        i_while += 2;  // 每次加 2
+    }
+    cout << "使用 while 迴圈計算的偶數和: " << sum_while << endl;
+
+    // 3. 使用 do-while 迴圈計算偶數和
+    int sum_do_while = 0;
+    int i_do_while = 2;
+    do {
+        sum_do_while += i_do_while;
+        i_do_while += 2;
+    } while (i_do_while <= n);  // 當 i_do_while 小於等於 n 時
+    cout << "使用 do-while 迴圈計算的偶數和: " << sum_do_while << endl;
+
+    return 0;
 }
-
-// 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
-// 偵錯程式: F5 或 [偵錯] > [啟動偵錯] 功能表
-
-// 開始使用的提示: 
-//   1. 使用 [方案總管] 視窗，新增/管理檔案
-//   2. 使用 [Team Explorer] 視窗，連線到原始檔控制
-//   3. 使用 [輸出] 視窗，參閱組建輸出與其他訊息
-//   4. 使用 [錯誤清單] 視窗，檢視錯誤
-//   5. 前往 [專案] > [新增項目]，建立新的程式碼檔案，或是前往 [專案] > [新增現有項目]，將現有程式碼檔案新增至專案
-//   6. 之後要再次開啟此專案時，請前往 [檔案] > [開啟] > [專案]，然後選取 .sln 檔案
